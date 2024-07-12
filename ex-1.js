@@ -1,15 +1,19 @@
 function twoSum(numbers, target) {
-  // เริ่มเขียนโค้ดตรงนี้จ้า
   for (let i = 0; i < numbers.length; i++) {
-    let sum = numbers[i] + numbers[i - 1];
-    if (sum === target) {
-      return `${true} by ${numbers[i]} + ${numbers[i - 1]} = ${sum}`;
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] + numbers[j] === target) {
+        return `${true} by ${numbers[i]} + ${numbers[j]} = ${
+          numbers[i] + numbers[j]
+        }`;
+      }
     }
   }
+  return [];
 }
 
-const nums = [2, 7, 11, 15];
+const numbers = [2, 7, 11, 15];
 const target = 9;
 const target2 = 23;
-console.log(twoSum(nums, target));
-console.log(twoSum(nums, target2));
+
+console.log(twoSum(numbers, target));
+console.log(twoSum(numbers, target2));
